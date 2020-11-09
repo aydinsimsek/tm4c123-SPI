@@ -16,10 +16,10 @@ int main()
 	SSI0->CC = 0x0; // Select the SPI Baud Clock Source as system clock 
 	SSI0->CPSR = 0x10; // Set the clock frequency to 1 MHz 
 	SSI0->CR0 = 0x7; // Freescale SPI mode, 1 Mbps bit rate, 8 data bits 
-  SSI0->CR1 |= 0x2; // Enable SPI    
+  	SSI0->CR1 |= 0x2; // Enable SPI    
 	
 	GPIOF->DIR |= 0xE; // Configure LED pins(PF1, PF2, PF3) to be an output
-	GPIOF->DEN |= 0x1B; // Enable digital functions for LED pins 
+	GPIOF->DEN |= 0xE; // Enable digital functions for LED pins 
 	GPIOF->DATA &= ~0xE; // Turn off the LEDs 
 	
 	while(1)
